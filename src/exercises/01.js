@@ -7,8 +7,15 @@ class ClassComp01 extends Component {
     }
 }
 
-const FunctionalComponent01 = () => {
-    return null;
+const FunctionalComponent01 = (props) => {
+    const url = props.imageSource;
+    return <img alt="zzzzzzzzzzzz" src={url} />;
 };
 
-export default ClassComp01;
+//destructured
+
+// const FunctionalComponent01 = ({imageSource}) => {
+//     return <img alt="zzzzzzzzzzzz" src={imageSource} />;
+// };
+
+export default FunctionalComponent01;
