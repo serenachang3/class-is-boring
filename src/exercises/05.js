@@ -1,7 +1,6 @@
 import { Component } from "react";
+import { connect, useSelector, useDispatch} from "react-redux";
 import TheBoredSimulator from "../simulator";
-
-import { connect } from "react-redux";
 import { setSimulationStatus, resetBoringLevel } from "../simulator/reducks/actions";
 
 const mSTP = (state) => {
@@ -29,10 +28,20 @@ class ClassComp05 extends Component {
 const ConnectedClassComp05 = connect(mSTP, mDTP)(ClassComp05);
 
 const FunctionalComponent05 = () => {
-    return null;
+    const level = useSelector(state => {
+        return state.currentBoredLevel;
+    });
+    const dispatch  = useDispatch();
+    if (level === 0) {
+        return null;
+    };
+    return <button onClick={() => {
+        dispatch(resetBoringLevel());
+        dispatch(setSimulationStatus({ started: false, aborted: true }));
+    }}>ABORT SIMULATION</button>;
 };
 
 const Exercise05 = () => {
-    return <TheBoredSimulator abortButton={<ConnectedClassComp05 />} />
+    return <TheBoredSimulator abortButton={<FunctionalComponent05 />} />
 };
 export default Exercise05;
