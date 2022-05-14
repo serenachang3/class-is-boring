@@ -13,3 +13,7 @@ Slide links:
 - https://reactjs.org/docs/hooks-reference.html#usestate
 - https://reactjs.org/docs/hooks-reference.html#useeffect
 - https://react-redux.js.org/api/hooks
+
+
+Video link!
+https://drive.google.com/file/d/1qy1-z01zq4GyY1twr4JYuKfgNJlPiJlW/view
